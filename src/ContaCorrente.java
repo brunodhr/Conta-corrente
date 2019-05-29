@@ -3,7 +3,7 @@ public class ContaCorrente {
 	private int numeroconta;
 	private int id_client;
 	private int agencia;
-	private char tipoconta;
+	private String tipoconta;
 	private double saldo;
 	private boolean ativo;
 	public ContaCorrente() {
@@ -16,7 +16,7 @@ public class ContaCorrente {
 		int id_client, 
 		int agencia, 
 		//Tem que ser F ou J
-		char tipoconta, 
+		String tipoconta, 
 		//Tem que ser maior ou igual á 0
 		double saldo, 
 		boolean ativo
@@ -47,10 +47,13 @@ public class ContaCorrente {
 	public void setAgencia(int agencia) {
 		this.agencia = agencia;
 	}
-	public char getTipoconta() {
+	public String getTipoconta() {
 		return tipoconta;
 	}
-	public void setTipoconta(char tipoconta) {
+	public void setTipoconta(String tipoconta) {
+		if(tipoconta != "F" || tipoconta != "J") {
+			
+		}
 		this.tipoconta = tipoconta;
 	}
 	public double getSaldo() {
