@@ -14,7 +14,7 @@ public class Banco{
 		conta.setNumeroconta(1);
 		conta.setId_client(1);
 		conta.setAgencia(1);
-		conta.setTipoconta("F");
+		conta.setTipoconta("J");
 		conta.setSaldo(100.00);
 		conta.setAtivo(true);
 		
@@ -26,7 +26,11 @@ public class Banco{
 				case 0:
 					System.out.println("Sacar");
 						double saque = Byte.parseByte(JOptionPane.showInputDialog("Quanto deseja sacar?"));
-						conta.setSaldo(conta.getSaldo() - saque);
+						if(saque > conta.getSaldo()) {
+							throw new java.lang.Error("Valor a cima do seu saldo");
+						} else {
+							conta.setSaldo(conta.getSaldo() - saque);
+						}
 					break;
 				case 1:
 					System.out.println("Deposito");

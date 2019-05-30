@@ -33,7 +33,11 @@ public class ContaCorrente {
 		return numeroconta;
 	}
 	public void setNumeroconta(int numeroconta) {
-		this.numeroconta = numeroconta;
+		if(numeroconta > 0 && numeroconta < 100) {
+			this.numeroconta = numeroconta;
+		} else {
+			throw new java.lang.Error("Número da conta inválido");
+		}
 	}
 	public int getId_client() {
 		return id_client;
@@ -51,16 +55,21 @@ public class ContaCorrente {
 		return tipoconta;
 	}
 	public void setTipoconta(String tipoconta) {
-		if(tipoconta != "F" || tipoconta != "J") {
-			
+		if(tipoconta == "F" || tipoconta == "J") {		
+			this.tipoconta = tipoconta;
+		} else {
+			throw new java.lang.Error("Tipo da conta inválido");
 		}
-		this.tipoconta = tipoconta;
 	}
 	public double getSaldo() {
 		return saldo;
 	}
 	public void setSaldo(double saldo) {
-		this.saldo = saldo;
+		if(saldo > 0) {
+			this.saldo = saldo;
+		} else {
+			throw new java.lang.Error("Saldo inválido");
+		}
 	}
 	public boolean isAtivo() {
 		return ativo;
